@@ -1,5 +1,6 @@
 import { ComposableMap, Geographies, Geography, ZoomableGroup, Annotation, Sphere, Graticule, Marker } from "react-simple-maps";
 import {memo} from "react";
+import deaths from "../utils/deaths";
 const geoUrl =
 "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 const newWorld = "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m-simplified.json"
@@ -22,10 +23,14 @@ const World = ({setTooltipContent}) => {
           <ZoomableGroup zoom={8} center={[80,20]} maxZoom={200}>
         <Geographies geography={newWorld}>
           {({ geographies }) =>
-            geographies.map(geo => <Geography key={geo.rsmKey} geography={geo} fill={randomColor()} 
+            geographies.map(geo => <Geography key={geo.rsmKey} geography={geo}
             onMouseEnter={() => {
                 const { NAME } = geo.properties;
-                setTooltipContent(`${NAME}`);
+                setTooltipContent(`${NAME}`)
+                deaths(NAME).then(cases=>{
+                   setTooltipContent(`${NAME} - ${cases}`)
+                  })
+                ;
               }}
               onMouseLeave={() => {
                 setTooltipContent("");
