@@ -1,3 +1,3 @@
-# Coronavirus Death Count
+# Live Coronavirus Death Count
 
 ![Death Count](/world.gif)
