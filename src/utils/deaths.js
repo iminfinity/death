@@ -24,15 +24,5 @@ const deaths = async (country) => {
   } finally {
     return total;
   }
-  //   axios
-  //     .get("https://api.covid19api.com/total/dayone/country/india/status/deaths")
-  //     .then((response) => response.data)
-  //     .then((array) => array[array.length - 1])
-  //     .then((lastItem) => {
-  //       total = lastItem.Cases;
-  //       console.log("Inside", total);
-  //     })
-  //     .catch((error) => console.log(error));
-  //   console.log("Outside", total);
 };
 export default deaths;

@@ -52,7 +52,7 @@ const World = ({setTooltipContent}) => {
             />)
           }
         </Geographies>
-        <Marker coordinates={[83.4323, 27.6866]}>
+        {/* <Marker coordinates={[83.4323, 27.6866]}>
         <circle r={0.8} fill="#7033ff" />
       </Marker>
           <Annotation
@@ -69,7 +69,7 @@ const World = ({setTooltipContent}) => {
             <text  textAnchor="start" alignmentBaseline="end" fill="#101010">
               {"I'm here !!!"}
             </text>
-          </Annotation>
+          </Annotation> */}
           </ZoomableGroup>
       </ComposableMap>
     </div>
